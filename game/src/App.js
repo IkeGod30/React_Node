@@ -1,13 +1,30 @@
 import logo from './logo.svg';
 import './App.css';
+// import { useState } from 'react';
+import { Component } from 'react';
 
+
+// function App(props) {
+//   const [apiResponse, setapiResponse] = useState("");
+//   return (
+//     <div className="App">
+//         <header className="App-header">
+//           <img src="{logo}" className="App-logo" alt="logo" />
+//           <h1 className="App-title">Welcome to React plus Node</h1>
+
+//         </header>
+//         <p className="App-intro">{this.state.apiResponse}</p>
+//     </div>
+//   );
+// }
 
 class App extends Component {
   constructor(props) {
-    super(props);
-    this.state = { apiResponse: "" };
+  super(props);
+  this.state = { apiResponse: "" };
+}
+  
 
-  }
   callAPI() {
     fetch("http://localhost:9000/testAPI")
     .then(res => res.text())
@@ -19,12 +36,14 @@ class App extends Component {
     this.callAPI();
   }
 
+
   render() {
     return (
       <div className="App">
           <header className="App-header">
             <img src="{logo}" className="App-logo" alt="logo" />
             <h1 className="App-title">Welcome to React plus Node</h1>
+            {/* <h1>Adding more elements</h1> */}
 
           </header>
           <p className="App-intro">{this.state.apiResponse}</p>
@@ -32,6 +51,25 @@ class App extends Component {
     );
   }
 }
+
+
+// function App() {
+//   const [count, setCount] = useState(0);
+//   return (
+//     <div className="App">
+//         <header className="App-header">
+//           <img src="{logo}" className="App-logo" alt="logo" />
+//           <h1 className="App-title">Welcome to React plus Node</h1>
+
+//         </header>
+//         <p className="App-intro">{this.state.apiResponse}</p>
+//     </div>
+//   );
+// }
+
+
+
+
 // function App() {
 //   return (
 //     <div className="App">
@@ -52,5 +90,6 @@ class App extends Component {
 //     </div>
 //   );
 // }
+
 
 export default App;
